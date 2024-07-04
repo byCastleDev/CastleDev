@@ -30,6 +30,8 @@ import mensaje from '../../public/imagenes/mensaje.png';
                 <div class="button-container">
                     <button type="submit">Enviar <i class="bi bi-envelope-arrow-up-fill"></i></button>
                 </div>
+                <input type="hidden" name="_next" value="https://castle-dev.vercel.app/">
+                <input type="hidden" name="_captcha" value="false">
         </div>
         <div class="imagen">
             <Image src={ mensaje } class="img" alt="mensaje" width="300" heigth="300"/>
@@ -37,40 +39,7 @@ import mensaje from '../../public/imagenes/mensaje.png';
     </div>
 </div>
 
-<script>
-    document.getElementById('contact-form').addEventListener('submit', async function(event) {
-      event.preventDefault();
-  
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const message = document.getElementById('message').value;
-  
-      try {
-        const response = await fetch('/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            to: 'byCastleDev@gmail.com', // Reemplaza esto con tu dirección de correo electrónico
-            subject: `Mensaje de ${name}`,
-            text: `Nombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\n\nMensaje:\n${message}`
-          })
-        });
-  
-        const result = await response.json();
-        if (result.success) {
-          alert('Correo enviado con éxito');
-        } else {
-          alert('Error al enviar el correo: ' + result.error);
-        }
-      } catch (error) {
-        console.error('Error al enviar el correo:', error);
-        alert('Error al enviar el correo');
-      }
-    });
-  </script>
+
 <!-- 
 <style>
     .contenedor-contactanos{
