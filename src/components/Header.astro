@@ -3,18 +3,20 @@ import { Image } from 'astro:assets';
 import { getImage } from "astro:assets";
 import logo from '../../public/imagenes/logo.jpeg';
 import ilustracion from '../../public/imagenes/ilustracion.png'; 
-import fondoWeb from '../../public/imagenes/fondoWeb.jpeg'; 
-const Background = await getImage({src: fondoWeb, format: 'webp'});
 import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import '@fontsource/dm-serif-text';
 import '@fontsource-variable/exo-2';
 ---
 
-<div class="header-contenedor section" id="inicio"  style={`background-image: url(${Background.src});`}>
+<div class="header-contenedor section" id="inicio"  }>
     <div class="nav">
-        <Image class="logo" src={logo} alt="logo"
-        width="160"
-        height="160"/>
+        <div class="header">
+
+            <Image class="logo" src={logo} alt="logo"
+            width="160"
+            height="160"/>
+            <h1>ByCastleDev</h1>
+        </div>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
@@ -173,17 +175,17 @@ import '@fontsource-variable/exo-2';
     }
 
     .header-contenedor {
+        background-color: #030b1b;
         border-radius: 20px;
         width: 100%;
         min-height: 100vh; /* Ocupa al menos toda la altura de la ventana */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         display: flex;
         flex-direction: column;
         position: relative;
         overflow: hidden; /* Evita que el contenido se desborde */
     }
+
+    
 
     h3 {
         max-width: 90%;
@@ -193,16 +195,6 @@ import '@fontsource-variable/exo-2';
         font-weight: 400;
         font-size: 24px;
         line-height: 1.5;
-    }
-
-    .header-contenedor::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* Overlay semi-transparente */
     }
 
     .nav {
@@ -237,6 +229,7 @@ import '@fontsource-variable/exo-2';
     a:hover {
         color: #ffffff;
     }
+    
 
     .contenedor-informacion {
         display: flex;
@@ -307,6 +300,14 @@ import '@fontsource-variable/exo-2';
         .nav ul li {
             margin: 0;
         }
+
+        .header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
 
         .logo {
             width: 100px;

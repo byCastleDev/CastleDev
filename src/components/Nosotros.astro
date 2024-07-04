@@ -1,15 +1,17 @@
 ---
 import { Image } from 'astro:assets';
 import about from '../../public/imagenes/about2.png';
+
+
 ---
 
 <div class="contenedor-nosotros" id="nosotros">
     <div class="about-me">
         <h1 class="title">Acerca de Nosotros</h1>
-        <h3 class="text">
-            Somos un equipo apasionado por el diseño y desarrollo web, especializado en crear soluciones innovadoras y estéticamente atractivas. Con formación en Ingeniería en Informática, nos enfocamos en desarrollar aplicaciones y sitios web funcionales que cumplen con las necesidades de los usuarios. Como desarrolladores frontend junior, nos dedicamos a crear interfaces amigables y eficientes con tecnologías modernas. Exploramos también el desarrollo backend para ofrecer soluciones web robustas y completas. Nuestro objetivo es combinar conocimientos técnicos con creatividad para proporcionar soluciones web efectivas y atractivas, garantizando la mejor experiencia para nuestros clientes.</h3>
+        <h3 class="text" id="text">
+            Somos un equipo apasionado por el diseño y desarrollo web, especializado en crear soluciones innovadoras y estéticamente atractivas. Como desarrolladores frontend junior, nos dedicamos a crear interfaces amigables y eficientes con tecnologías modernas. Exploramos también el desarrollo backend para ofrecer soluciones web robustas y completas.</h3>
     </div>
-    <div class="imagen-about">
+    <div class="imagen-about img ">
         <Image src={ about } alt="about" width="300" heigth="300" />
     </div>
 </div>
@@ -157,5 +159,16 @@ import about from '../../public/imagenes/about2.png';
         font-size: 1.1rem; /* Tamaño de fuente más pequeño */
         line-height: 1.6; /* Espaciado entre líneas */
         color: #777; /* Color de texto gris oscuro */
+    }
+
+    .text{
+        text-align: left;
+    }
+
+    @media (max-width: 768px) {
+
+        .img{
+            display:none;
+        }
     }
 </style>
