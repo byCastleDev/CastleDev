@@ -1,0 +1,326 @@
+---
+import { Image } from 'astro:assets';
+import { getImage } from "astro:assets";
+import logo from '../../public/imagenes/logo.jpeg';
+import ilustracion from '../../public/imagenes/ilustracion.png'; 
+import fondoWeb from '../../public/imagenes/fondoWeb.jpeg'; 
+const Background = await getImage({src: fondoWeb, format: 'webp'});
+import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
+import '@fontsource/dm-serif-text';
+import '@fontsource-variable/exo-2';
+---
+
+<div class="header-contenedor section" id="inicio"  style={`background-image: url(${Background.src});`}>
+    <div class="nav">
+        <Image class="logo" src={logo} alt="logo"
+        width="160"
+        height="160"/>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <!-- <li><a href="#habilidades">Habilidades</a></li> -->
+            <!-- <li><a href="#proyectos">Proyectos</a></li> -->
+            <li><a href="#contactanos">Contactanos</a></li>
+        </ul>
+
+    </div>
+    <div class="contenedor-informacion">
+        <div class="contenedor">
+
+            <h4>Bienvenido a mi sitio web, somos</h4>
+            <h1 class="title">byCastleDev</h1>
+            <h3 class="informacion">Transformamos tus ideas en experiencias digitales únicas, combinando creatividad y tecnología para ofrecer soluciones web efectivas y atractivas</h3>
+            <div class="buttom">
+                <button>Descargar CV   <i class="bi bi-download"></i></button>
+                <button>Contactanos    <i class="bi bi-chat-text-fill"></i></button>
+            </div>
+        </div>
+        <div class="imagen">
+            <Image class="img" src={ ilustracion } alt="ilustracion"
+            width="330"
+            height="350"/>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        /* overflow-x: hidden; */
+        font-family: 'Exo 2 Variable', sans-serif;
+    }
+
+    .header-contenedor {
+        border-radius: 20px;
+        width: 100%;
+        height: 100%; /* Usa '100vh' para ocupar toda la altura de la ventana */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h3{
+        max-width: 870px;
+    }
+
+    ul{
+        margin-top: 300px;
+    }
+
+    .header-contenedor::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Ajusta el valor '0.5' para cambiar la opacidad */
+    }
+
+    .nav {
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+    .nav ul{
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    a{
+        text-decoration: none;
+        color: #e4e4e4;
+        font-weight: 400;
+        font-size:30px;
+        font-family: 'DM Serif Text', serif;
+    }
+
+    ul{
+        gap: 20px;
+        padding-top: 55px;
+    }
+
+    .nav ul li {
+        margin-left: 20px; /* Añade un margen a la izquierda para separar los elementos */
+    }
+
+    .contenedor-informacion{
+        display: flex;
+        flex-direction: row;
+        color: #e4e4e4;
+        z-index: 1;
+        gap: 100px;
+    }
+
+    .logo{
+        border-radius: 50%;
+        filter: drop-shadow(0px 0px 10px rgba(91, 82, 126, 0.6));
+    }
+
+    .img{
+        filter: drop-shadow(1px 2px 18px rgba(135, 137, 255, 0.6));
+    }
+
+    button{
+        margin: 14px;;
+        padding: 10px 8px;
+        border: 1px solid rgb(63, 201, 255);
+        border-radius: 16px;
+        background-color: #7ccfff;
+        font-weight: 700;
+        font-size: 19px;
+    }
+
+    button:hover{
+        transform: scale(1.05);
+        background-color: #73ccff;
+    }
+
+    button:active{
+        transform: scale(0.9);
+        background-color: #a3ddff;
+    }
+
+    i{
+        font-size: 25px;
+    }
+
+</style> -->
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Exo 2 Variable', sans-serif;
+    }
+
+    .header-contenedor {
+        border-radius: 20px;
+        width: 100%;
+        min-height: 100vh; /* Ocupa al menos toda la altura de la ventana */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden; /* Evita que el contenido se desborde */
+    }
+
+    h3 {
+        max-width: 90%;
+        margin: auto;
+        text-align: center;
+        color: #e4e4e4;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 1.5;
+    }
+
+    .header-contenedor::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Overlay semi-transparente */
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+    }
+
+    .nav ul li {
+        margin-left: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #e4e4e4;
+        font-weight: 400;
+        font-size: 18px;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #ffffff;
+    }
+
+    .contenedor-informacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #e4e4e4;
+        gap: 30px;
+        padding: 20px;
+        z-index: 1;
+        position: relative; /* Asegura que el contenido no se salga del fondo */
+    }
+
+    .logo {
+        border-radius: 50%;
+        filter: drop-shadow(0px 0px 10px rgba(91, 82, 126, 0.6));
+        width: 150px;
+        height: 150px;
+    }
+
+    .img {
+        filter: drop-shadow(1px 2px 18px rgba(135, 137, 255, 0.6));
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: 1px solid rgb(63, 201, 255);
+        border-radius: 16px;
+        background-color: #7ccfff;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background-color: #73ccff;
+    }
+
+    button:active {
+        transform: scale(0.9);
+        background-color: #a3ddff;
+    }
+
+    i {
+        font-size: 25px;
+    }
+
+    @media (max-width: 768px) {
+        .nav {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav ul {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav ul li {
+            margin: 0;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .img {
+            display: none;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+    }
+</style>

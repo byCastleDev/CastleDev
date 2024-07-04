@@ -1,0 +1,116 @@
+---
+import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+---
+<div class="contenedor-footer">
+    <div class="cabecera">
+        <h1 class="title">
+            byCastleDev
+        </h1>
+        <h4>"Innovación web a tu alcance."</h4>
+    </div>
+    <div class="links">
+
+        <div class="redes">
+            <h3>Conectate con Nosotros</h3>
+            <button class="comunicarse ig">
+                <i class="bi bi-instagram"></i>
+            </button>
+            <button class="comunicarse whatsapp">
+                <i class="bi bi-whatsapp"></i>
+            </button>
+            <button class="comunicarse git">
+                <i class="bi bi-github"></i>
+            </button>
+        </div>
+        <div class="enlaces">
+            <h3>
+                Links Directos
+            </h3>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <!-- <li><a href="#habilidades">Habilidades</a></li> -->
+            <!-- <li><a href="#proyectos">Proyectos</a></li> -->
+            <li><a href="#contactanos">Contactanos</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="derechos">
+        <p class="derechos-autor">© 2024 Todos los derechod reservados. <br> Diseñado por byCastleDev.</p>
+        
+    </div>
+</div>
+
+<style>
+    .contenedor-footer, .cabecera, .derechos{
+        padding: 30px;
+        color: #e4e4e4;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .links{
+        display:flex;
+        flex-direction: row;
+        gap:18px;
+    }
+
+    .comunicarse{
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid rgb(0, 21, 88);
+        
+    }
+
+    
+
+    .ig{
+        background-color: rgb(233, 78, 168);
+    }
+
+    .ig:hover{
+        transform: scale(1.1);
+        background-color: rgba(233, 78, 168, 1);
+    }
+
+    .ig:active{
+        transform: scale(0.9);
+        background-color: rgba(233, 78, 168, 0.5);
+    }
+
+    .git{
+        background-color: #555;
+    }
+
+    .git:hover{
+        transform: scale(1.1);
+        background-color: #333;
+    }
+
+    .git:active{
+        transform: scale(0.9);
+        background-color: #234;
+    }
+
+    .whatsapp{
+        background-color: rgb(32, 214, 87);
+    }
+
+    .whatsapp:hover{
+        transform: scale(1.1);
+        background-color: rgb(0, 194, 58);
+    }
+
+    .whatsapp:active{
+        transform: scale(0.9);
+        background-color: rgba(0, 194, 58,0.5);
+    }
+</style>

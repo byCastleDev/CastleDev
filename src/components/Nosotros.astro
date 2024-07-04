@@ -1,0 +1,161 @@
+---
+import { Image } from 'astro:assets';
+import about from '../../public/imagenes/about2.png';
+---
+
+<div class="contenedor-nosotros" id="nosotros">
+    <div class="about-me">
+        <h1 class="title">Acerca de Nosotros</h1>
+        <h3 class="text">
+            Somos un equipo apasionado por el diseño y desarrollo web, especializado en crear soluciones innovadoras y estéticamente atractivas. Con formación en Ingeniería en Informática, nos enfocamos en desarrollar aplicaciones y sitios web funcionales que cumplen con las necesidades de los usuarios. Como desarrolladores frontend junior, nos dedicamos a crear interfaces amigables y eficientes con tecnologías modernas. Exploramos también el desarrollo backend para ofrecer soluciones web robustas y completas. Nuestro objetivo es combinar conocimientos técnicos con creatividad para proporcionar soluciones web efectivas y atractivas, garantizando la mejor experiencia para nuestros clientes.</h3>
+    </div>
+    <div class="imagen-about">
+        <Image src={ about } alt="about" width="300" heigth="300" />
+    </div>
+</div>
+<!-- 
+<style>
+    /* body{
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        
+    } */
+
+    .contenedor-nosotros{
+        margin: 100px 20px;
+        border-radius: 20px;
+        /* margin: 150px 0; */
+        padding: 100px 50px;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        /* background-color: #d9d9fa; */
+        background-color: rgb(174, 184, 228);
+    }
+
+    .title{
+        font-weight: 800;
+    }
+
+    .imagen-about{
+        display:flex;
+        align-items: center;
+    }
+
+    .about-me{
+        display:flex;
+        gap:70px;
+        flex-direction: column;
+        width: 900px;
+        margin-right: 70px;
+    }
+</style> -->
+<!-- <style>
+    /* Reset de estilos globales */
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Exo 2 Variable', sans-serif;
+    }
+
+    /* Estilos para el contenedor principal de Nosotros */
+    .contenedor-nosotros {
+        margin: 100px 20px; /* Margen superior e inferior de 100px, y 20px a los lados */
+        padding: 50px; /* Padding interno de 50px en todos los lados */
+        border-radius: 20px; /* Bordes redondeados */
+        background-color: rgb(174, 184, 228); /* Color de fondo */
+        display: flex; /* Contenedor principal con display flex */
+        flex-direction: row; /* Dirección de los elementos: fila */
+        gap: 70px; /* Espacio entre elementos internos */
+        align-items: center; /* Alineación vertical de los elementos al centro */
+        justify-content: space-around; /* Distribución equitativa de los elementos */
+    }
+
+    /* Estilos para el título principal */
+    .title {
+        font-size: 2.5rem; /* Tamaño de fuente grande */
+        font-weight: 800; /* Grosor de la fuente */
+        color: #333; /* Color de texto oscuro */
+    }
+
+    /* Estilos para la sección de imagen en Nosotros */
+    .imagen-about img {
+        width: 100%; /* Imagen ocupa todo el ancho disponible */
+        max-width: 400px; /* Ancho máximo de la imagen */
+        border-radius: 50%; /* Bordes redondeados */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    }
+
+    /* Estilos para la sección de texto (sobre mí) en Nosotros */
+    .about-me {
+        flex: 1; /* Ocupa todo el espacio restante */
+    }
+
+    .about-me h3 {
+        font-size: 1.5rem; /* Tamaño de fuente mediano */
+        font-weight: 600; /* Grosor de la fuente */
+        color: #555; /* Color de texto gris */
+    }
+
+    .about-me p {
+        font-size: 1.1rem; /* Tamaño de fuente más pequeño */
+        line-height: 1.6; /* Espaciado entre líneas */
+        color: #777; /* Color de texto gris oscuro */
+    }
+</style> -->
+
+<style>
+    /* Reset de estilos globales */
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Exo 2 Variable', sans-serif;
+    }
+
+    /* Estilos para el contenedor principal de Nosotros */
+    .contenedor-nosotros {
+        margin: 100px 20px; /* Margen superior e inferior de 100px, y 20px a los lados */
+        padding: 50px; /* Padding interno de 50px en todos los lados */
+        border-radius: 20px; /* Bordes redondeados */
+        background-color: rgb(174, 184, 228); /* Color de fondo */
+        display: flex; /* Contenedor principal con display flex */
+        flex-direction: column; /* Dirección de los elementos: columna en dispositivos pequeños */
+        gap: 50px; /* Espacio entre elementos internos */
+        align-items: center; /* Alineación vertical de los elementos al centro */
+        text-align: center; /* Alineación de texto centrada */
+    }
+
+    /* Estilos para el título principal */
+    .title {
+        font-size: 2.5rem; /* Tamaño de fuente grande */
+        font-weight: 800; /* Grosor de la fuente */
+        color: #333; /* Color de texto oscuro */
+    }
+
+    /* Estilos para la sección de imagen en Nosotros */
+    .imagen-about img {
+        width: 100%; /* Imagen ocupa todo el ancho disponible */
+        max-width: 400px; /* Ancho máximo de la imagen */
+        border-radius: 50%; /* Bordes redondeados */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    }
+
+    /* Estilos para la sección de texto (sobre mí) en Nosotros */
+    .about-me {
+        max-width: 800px; /* Ancho máximo del texto */
+    }
+
+    .about-me h3 {
+        font-size: 1.5rem; /* Tamaño de fuente mediano */
+        font-weight: 600; /* Grosor de la fuente */
+        color: #555; /* Color de texto gris */
+        margin-bottom: 20px; /* Espacio inferior del título */
+    }
+
+    .about-me p {
+        font-size: 1.1rem; /* Tamaño de fuente más pequeño */
+        line-height: 1.6; /* Espaciado entre líneas */
+        color: #777; /* Color de texto gris oscuro */
+    }
+</style>

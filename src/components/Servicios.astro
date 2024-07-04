@@ -1,0 +1,192 @@
+---
+import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
+---
+<div class="contenedor-servicios" id="servicios">
+    <h1 class="title">Servicios</h1>
+    <div class="contenedor-card">
+        <div class="servicio">
+            <div class="informacion">
+
+                <i class="bi bi-columns"></i>
+                <h3 class="title-servicio">Desarrollo Web Frontend</h3>
+                <p class="description">Creamos interfaces web modernas y responsivas. Nos enfocamos en brindar experiencias de usuario intuitivas y estéticamente agradables que funcionen perfectamente en cualquier dispositivo.</p>
+            </div>
+            <button  onclick="window.location.href='#contactanos'">Contactanos    <i class="bi bi-chat-text-fill"></i></button>
+        </div>
+        <div class="servicio">
+            <div class="infor">
+
+                <i class="bi bi-brush-fill"></i>
+                <h3 class="title-servicio">Diseño Web</h3>
+                <p class="description">Utilizamos herramientas de diseño avanzadas para desarrollar sitios web visualmente impactantes que capturen la atención de tus visitantes</p>
+            </div>
+            <button  onclick="window.location.href='#contactanos'">Contactanos    <i class="bi bi-chat-text-fill"></i></button>
+        </div>
+        <div class="servicio">
+            <div class="informacion">
+
+                <i class="bi bi-clipboard-data-fill"></i>
+                <h3 class="title-servicio">Desarrollo Web Backend</h3>
+                <p class="description">Estamos comenzando a explorar el desarrollo backend para ofrecer soluciones completas. Trabajamos con tecnologías como Node.js y bases de datos SQL y NoSQL para asegurar que tu sitio web no solo luzca bien, sino que también funcione de manera eficiente y segura.</p>
+            </div>
+            <button  onclick="window.location.href='#contactanos'">Contactanos    <i class="bi bi-chat-text-fill"></i></button>
+        </div>
+        <div class="servicio">
+            <div class="informacion">
+
+                <i class="bi bi-code-square"></i>
+                <h3 class="title-servicio">Programación y Proyectos Personalizados</h3>
+                <p class="description">Desarrollamos proyectos a medida para satisfacer necesidades específicas. Desde aplicaciones web personalizadas hasta integraciones con sistemas existentes, ofrecemos soluciones de programación que se adaptan perfectamente a tus requerimientos.</p>
+            </div>
+            <button  onclick="window.location.href='#contactanos'">Contactanos    <i class="bi bi-chat-text-fill"></i></button>
+        </div>
+    </div>
+</div>
+<!-- 
+<style>
+    .contenedor-servicios{
+        margin-top: 100px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
+    }
+
+    h1{
+        font-weight: 900;
+        color: #dcf2ff;
+    }
+
+    .contenedor-card{
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .iformacion{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+
+    }
+
+    .servicio{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 300px; /* Todos los elementos tendrán un ancho mínimo de 300px y se ajustarán automáticamente */
+        max-width: 300px;
+        padding: 20px;
+        background-color: rgb(174, 184, 228);;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(113, 186, 255, 0.39);
+        text-align: center;
+        gap: 15px;
+        justify-content: space-between;
+
+    }
+
+    .servicio i{
+        font-size: 2rem;
+    }
+    
+    button{
+        margin: 14px;;
+        padding: 10px 8px;
+        border: 1px solid rgb(63, 201, 255);
+        border-radius: 16px;
+        background-color: #7ccfff;
+        font-weight: 700;
+        font-size: 19px;
+    }
+
+    button:hover{
+        transform: scale(1.05);
+        background-color: #73ccff;
+    }
+
+    button:active{
+        transform: scale(0.9);
+        background-color: #a3ddff;
+    }
+
+</style> -->
+
+<style>
+    .contenedor-servicios {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 70px; /* Espacio entre elementos */
+    }
+
+    h1 {
+        font-weight: 900;
+        color: #dcf2ff;
+        text-align: center; /* Centrar el texto */
+    }
+
+    .contenedor-card {
+        display: flex;
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias líneas si no caben en una */
+        gap: 60px; /* Espacio entre tarjetas */
+        justify-content: center; /* Centrar las tarjetas horizontalmente */
+    }
+
+    .servicio {
+        flex: 1 1 300px; /* Todos los elementos tendrán un ancho mínimo de 300px y se ajustarán automáticamente */
+        max-width: 300px;
+        padding: 20px;
+        background-color: rgb(174, 184, 228);
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(113, 186, 255, 0.39);
+        text-align: center; /* Centrar el contenido del servicio */
+        gap: 15px; /* Espacio entre elementos internos */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribuir el contenido verticalmente */
+    }
+
+    .servicio i {
+        font-size: 2rem; /* Tamaño del icono */
+    }
+
+    .servicio h3 {
+        font-size: 1.5rem; /* Tamaño del título del servicio */
+        color: #333; /* Color de texto oscuro */
+    }
+
+    .servicio p {
+        font-size: 1rem; /* Tamaño del texto del servicio */
+        line-height: 1.4; /* Espaciado entre líneas */
+        color: #666; /* Color de texto gris */
+    }
+
+    button {
+        margin-top: 14px; /* Margen superior para el botón */
+        padding: 10px 20px; /* Espaciado interno del botón */
+        border: 1px solid rgb(63, 201, 255);
+        border-radius: 16px;
+        background-color: #7ccfff;
+        font-weight: 700;
+        font-size: 18px; /* Tamaño de fuente del botón */
+        color: #fff; /* Color de texto blanco */
+        cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+        transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    }
+
+    button:hover {
+        transform: scale(1.05); /* Escalar ligeramente al pasar sobre el botón */
+        background-color: #73ccff; /* Cambiar color de fondo al pasar sobre el botón */
+    }
+
+    button:active {
+        transform: scale(0.9); /* Escalar ligeramente al hacer clic en el botón */
+        background-color: #a3ddff; /* Cambiar color de fondo al hacer clic en el botón */
+    }
+</style>

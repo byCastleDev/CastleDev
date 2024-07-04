@@ -1,0 +1,225 @@
+---
+import { Image } from 'astro:assets';
+import mensaje from '../../public/imagenes/mensaje.png';
+
+
+---
+
+<div class="contenedor-contactanos" id="contactanos">
+    <h1 class="title">Contactanos</h1>
+    <div class="container">
+
+        <div class="contactan">
+            <form>
+                <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input type="text" class="form-control dato" id="name" placeholder="Ingrese su nombre">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control dato" id="email" placeholder="Ingrese su email">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" class="form-control dato" id="telefono" placeholder="Ingrese su telefono">
+                  </div>
+                <div class="form-group">
+                  <label for="message">Mensaje</label>
+                  <textarea class="form-control" id="message" rows="3" placeholder="Escriba su mensaje"></textarea>
+                </div>
+                <div class="button-container">
+                    <button>Enviar <i class="bi bi-envelope-arrow-up-fill"></i></button>
+                </div>
+        </div>
+        <div class="imagen">
+            <Image src={ mensaje } class="img" alt="mensaje" width="300" heigth="300"/>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+  
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+  
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            to: 'byCastleDev@gmail.com', // Reemplaza esto con tu dirección de correo electrónico
+            subject: `Mensaje de ${name}`,
+            text: `Nombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\n\nMensaje:\n${message}`
+          })
+        });
+  
+        const result = await response.json();
+        if (result.success) {
+          alert('Correo enviado con éxito');
+        } else {
+          alert('Error al enviar el correo: ' + result.error);
+        }
+      } catch (error) {
+        console.error('Error al enviar el correo:', error);
+        alert('Error al enviar el correo');
+      }
+    });
+  </script>
+<!-- 
+<style>
+    .contenedor-contactanos{
+        margin: 100px 20px;
+        border-radius: 20px;
+        padding: 50px;
+        background-color: rgb(174, 184, 228);
+        z-index: 1;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        display: flex;
+        /* justify-content: space-around; */
+        align-items: center;
+        /* flex-direction: row; */
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end; /* Alinea el botón a la derecha */
+        margin-top: 20px; /* Añadir margen superior para espaciar del último campo del formulario */
+    }
+
+    button{
+        margin: 14px;;
+        padding: 10px 8px;
+        border: 1px solid rgb(63, 201, 255);
+        border-radius: 16px;
+        background-color: #7ccfff;
+        font-weight: 700;
+        font-size: 19px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+    }    
+
+    h1{
+        font-weight: 900;
+        color: #dcf2ff;
+    }
+
+    button:hover{
+        transform: scale(1.05);
+        background-color: #73ccff;
+    }
+
+    form{
+        width: 400px;
+    }
+
+    .form-groud{
+        width: 100%;
+    }
+
+    button:active{
+        transform: scale(0.9);
+        background-color: #a3ddff;
+    }
+
+
+</style> -->
+
+<style>
+    .contenedor-contactanos {
+        margin: 100px 20px;
+        border-radius: 20px;
+        padding: 50px;
+        background-color: rgb(174, 184, 228);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Espacio entre elementos */
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+    } 
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end; /* Alinea el botón a la derecha */
+        margin-top: 20px; /* Margen superior para espaciar del último campo del formulario */
+    }
+
+    button {
+        margin: 14px; /* Margen alrededor del botón */
+        padding: 10px 20px; /* Espaciado interno del botón */
+        border: 1px solid rgb(63, 201, 255); /* Borde del botón */
+        border-radius: 16px; /* Borde redondeado */
+        background-color: #7ccfff; /* Color de fondo */
+        font-weight: 700; /* Grosor de la fuente */
+        font-size: 19px; /* Tamaño de la fuente */
+        color: #fff; /* Color de texto blanco */
+        cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+        transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    }
+
+    button:hover {
+        transform: scale(1.05); /* Escalar ligeramente al pasar sobre el botón */
+        background-color: #73ccff; /* Cambiar color de fondo al pasar sobre el botón */
+    }
+
+    button:active {
+        transform: scale(0.9); /* Escalar ligeramente al hacer clic en el botón */
+        background-color: #a3ddff; /* Cambiar color de fondo al hacer clic en el botón */
+    }
+
+    h1 {
+        font-weight: 900; /* Grosor de la fuente del título */
+        color: #dcf2ff; /* Color del texto del título */
+    }
+
+    form {
+        width: 100%; /* Ancho del formulario al 100% del contenedor */
+        max-width: 400px; /* Ancho máximo del formulario */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Espacio entre elementos del formulario */
+    }
+
+    label {
+        font-weight: bold; /* Negrita para las etiquetas */
+        color: #333; /* Color de texto oscuro */
+    }
+
+    input, textarea {
+        width: 100%; /* Ancho completo del campo de entrada */
+        padding: 10px; /* Espaciado interno */
+        border: 1px solid #ccc; /* Borde del campo de entrada */
+        border-radius: 8px; /* Borde redondeado */
+        font-size: 16px; /* Tamaño de fuente */
+    }
+
+    textarea {
+        resize: vertical; /* Permitir redimensionar verticalmente solo para textarea */
+        min-height: 100px; /* Altura mínima del textarea */
+    }
+    @media (max-width: 768px) {
+        .img{
+			display:none;
+		}
+    }
+</style>
