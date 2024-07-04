@@ -10,25 +10,25 @@ import mensaje from '../../public/imagenes/mensaje.png';
     <div class="container">
 
         <div class="contactan">
-            <form>
+            <form action="https://formsubmit.co/bycastledev@gmail.com" method="POST">
                 <div class="form-group">
                   <label for="name">Nombre</label>
-                  <input type="text" class="form-control dato" id="name" placeholder="Ingrese su nombre">
+                  <input type="text" name="name" class="form-control dato" id="name" placeholder="Ingrese su nombre">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control dato" id="email" placeholder="Ingrese su email">
+                  <input type="email" name="email" class="form-control dato" id="email" placeholder="Ingrese su email">
                 </div>
                 <div class="form-group">
                     <label for="telefono">Telefono</label>
-                    <input type="tel" class="form-control dato" id="telefono" placeholder="Ingrese su telefono">
+                    <input type="tel" name="phone" class="form-control dato" id="telefono" placeholder="Ingrese su telefono">
                   </div>
                 <div class="form-group">
                   <label for="message">Mensaje</label>
-                  <textarea class="form-control" id="message" rows="3" placeholder="Escriba su mensaje"></textarea>
+                  <textarea class="form-control" name="mensaje" id="message" rows="3" placeholder="Escriba su mensaje"></textarea>
                 </div>
                 <div class="button-container">
-                    <button>Enviar <i class="bi bi-envelope-arrow-up-fill"></i></button>
+                    <button type="submit">Enviar <i class="bi bi-envelope-arrow-up-fill"></i></button>
                 </div>
         </div>
         <div class="imagen">
